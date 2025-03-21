@@ -2,7 +2,6 @@
 
 build_window_format() {
   local number="$1"
-  local color="$2"
   local background="$3"
   local text="$4"
   local fill="$5"
@@ -11,6 +10,12 @@ build_window_format() {
     local icon
     icon="$(build_window_icon) "
     text="$text$icon"
+    # Add color to differenciate window activity
+    local activity_color
+    activity_color=$(get_tmux_option "@catppuccin_window_activity_color" "$thm_green")
+    local color="#{?window_activity_flag,$activity_color,$2}"
+  else
+    local color="$2"
   fi
 
   if [ "$fill" = "none" ]; then

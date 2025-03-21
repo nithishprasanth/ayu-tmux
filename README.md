@@ -189,6 +189,14 @@ set -g @catppuccin_window_current_background "#{thm_bg}"
 Values:
 - color - a theme color (`#{thm_<color>}`) or a hexadecimal color value
 
+#### Override the window activity color:
+```sh
+set -g @catppuccin_window_activity_color "#{thm_orange}" # text color
+```
+
+Values:
+- color - a theme color (`#{thm_<color>}`) or a hexadecimal color value
+
 #### Override the window current text:
 ```sh
 set -g @catppuccin_window_current_text "#{b:pane_current_path}" # use "#W" for application instead of directory
